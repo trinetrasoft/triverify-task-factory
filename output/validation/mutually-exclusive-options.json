@@ -30,7 +30,7 @@
   "oracle": [
     {
       "reward": 1.0,
-      "seconds": 7.35,
+      "seconds": 7.17,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
@@ -44,7 +44,7 @@
     },
     {
       "reward": 1.0,
-      "seconds": 6.93,
+      "seconds": 7.35,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
@@ -52,7 +52,7 @@
   ],
   "nop": {
     "reward": 0.0,
-    "seconds": 7.11,
+    "seconds": 7.37,
     "regressions": [],
     "features_passing_at_base": []
   },
@@ -277,6 +277,6 @@
     "option"
   ],
   "passed": true,
-  "seconds": 39.8,
+  "seconds": 47.4,
   "round": 0
 }

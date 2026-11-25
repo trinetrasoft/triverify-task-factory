@@ -30,21 +30,21 @@
   "oracle": [
     {
       "reward": 1.0,
-      "seconds": 7.05,
+      "seconds": 7.19,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.01,
+      "seconds": 7.37,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.03,
+      "seconds": 7.28,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
@@ -52,7 +52,7 @@
   ],
   "nop": {
     "reward": 0.0,
-    "seconds": 7.36,
+    "seconds": 7.96,
     "regressions": [],
     "features_passing_at_base": []
   },
@@ -234,10 +234,8 @@
         "description": "NotIn \u2192 In",
         "killed": true,
         "killed_by": [
-          "test_aliases_from_group_constructor",
-          "test_aliases_in_chain_mode",
-          "test_every_alias_and_canonical_name_work",
-          "test_get_command_and_list_commands"
+          "test_invoke_through_alias",
+          "test_invoked_subcommand_is_canonical_name"
         ]
       },
       {
@@ -275,6 +273,6 @@
     "pass_context"
   ],
   "passed": true,
-  "seconds": 44.0,
+  "seconds": 51.7,
   "round": 0
 }

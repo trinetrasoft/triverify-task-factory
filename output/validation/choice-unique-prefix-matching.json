@@ -29,21 +29,21 @@
   "oracle": [
     {
       "reward": 1.0,
-      "seconds": 7.16,
+      "seconds": 7.22,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.25,
+      "seconds": 7.24,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.37,
+      "seconds": 7.18,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
@@ -51,7 +51,7 @@
   ],
   "nop": {
     "reward": 0.0,
-    "seconds": 7.38,
+    "seconds": 7.5,
     "regressions": [],
     "features_passing_at_base": []
   },
@@ -175,9 +175,9 @@
         "killed": true,
         "killed_by": [
           "test_ambiguous_prefix_lists_candidates_in_choice_order",
-          "test_case_insensitive_prefix",
           "test_case_sensitive_prefix_respects_case",
-          "test_command_line_errors"
+          "test_command_line_errors",
+          "test_enum_choices_use_member_names"
         ]
       },
       {
@@ -250,10 +250,8 @@
         "description": "0 \u2192 1",
         "killed": true,
         "killed_by": [
-          "test_ambiguous_prefix_lists_candidates_in_choice_order",
           "test_case_insensitive_prefix",
-          "test_case_sensitive_prefix_respects_case",
-          "test_command_line_errors"
+          "test_enum_choices_use_member_names"
         ]
       }
     ]
@@ -272,6 +270,6 @@
     "option"
   ],
   "passed": true,
-  "seconds": 36.0,
+  "seconds": 43.0,
   "round": 0
 }

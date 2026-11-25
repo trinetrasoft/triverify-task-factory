@@ -1,4 +1,7 @@
 schema_version = "1.4"
+# The verifier runs in a fresh copy of the environment and only receives the
+# agent's changes as a patch that excludes tests/ (tamper-proof regression suite).
+artifacts = ["/tmp/triverify/agent.patch"]
 
 [task]
 name = "trinetrasoft/click-group-command-aliases"
@@ -27,6 +30,11 @@ triverify_gates_passed = true
 
 [verifier]
 timeout_sec = 1200.0
+environment_mode = "separate"
+
+[[verifier.collect]]
+command = "mkdir -p /tmp/triverify && cd /app && git add -A && git diff --cached --binary -- . ':(exclude)tests' > /tmp/triverify/agent.patch"
+timeout_sec = 120.0
 
 [agent]
 timeout_sec = 3600.0

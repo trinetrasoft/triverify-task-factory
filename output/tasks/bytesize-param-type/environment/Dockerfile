@@ -17,4 +17,6 @@ RUN git init -q . \
     && git config --global user.email "agent@example.com" \
     && git config --global user.name "agent"
 
-RUN pip install -e . pytest==8.4.1
+RUN pip install -e . pytest==8.4.1 \
+    && git ls-files --others --exclude-standard >> .git/info/exclude \
+    && test -z "$(git status --porcelain)"

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T13:02:22Z",
+  "generated_at": "2026-11-25T13:18:09Z",
   "target": {
     "repo": "https://github.com/pallets/click",
     "ref": "8.5.1",
@@ -628,6 +628,34 @@
       "tests.test_defaults::test_parameter_source_on_parse_result_bypass",
       "tests.test_defaults::test_shared_param_prefers_first_default",
       "tests.test_defaults::test_unset_in_default_map",
+      "tests.test_deprecations::test_attr_deprecated[click-BaseCommand-_BaseCommand]",
+      "tests.test_deprecations::test_attr_deprecated[click-MultiCommand-_MultiCommand]",
+      "tests.test_deprecations::test_attr_deprecated[click-OptionParser-_OptionParser]",
+      "tests.test_deprecations::test_attr_deprecated[click-__version__-8.5.1]",
+      "tests.test_deprecations::test_attr_deprecated[click-get_binary_stream-_get_binary_stream]",
+      "tests.test_deprecations::test_attr_deprecated[click-get_text_stream-_get_text_stream]",
+      "tests.test_deprecations::test_attr_deprecated[click.core-BaseCommand-_BaseCommand]",
+      "tests.test_deprecations::test_attr_deprecated[click.core-MultiCommand-_MultiCommand]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-Argument-_Argument]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-Option-_Option]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-OptionParser-_OptionParser]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-ParsingState-_ParsingState]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-normalize_opt-_normalize_opt]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-split_arg_string-split_arg_string]",
+      "tests.test_deprecations::test_attr_deprecated[click.parser-split_opt-_split_opt]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-KeepOpenFile-_KeepOpenFile]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-LazyFile-_LazyFile]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-PacifyFlushWrapper-_PacifyFlushWrapper]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-get_binary_stream-_get_binary_stream]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-get_text_stream-_get_text_stream]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-make_default_short_help-_make_default_short_help]",
+      "tests.test_deprecations::test_attr_deprecated[click.utils-safecall-_safecall]",
+      "tests.test_deprecations::test_context_protected_args_deprecated",
+      "tests.test_deprecations::test_isolated_filesystem_deprecated",
+      "tests.test_deprecations::test_unknown_attribute_raises[click.core]",
+      "tests.test_deprecations::test_unknown_attribute_raises[click.parser]",
+      "tests.test_deprecations::test_unknown_attribute_raises[click.utils]",
+      "tests.test_deprecations::test_unknown_attribute_raises[click]",
       "tests.test_exceptions.test_FileError::test_file_error_surrogates",
       "tests.test_formatting::test_basic_functionality",
       "tests.test_formatting::test_command_write_usage_no_args[empty-options-metavar-no-params]",
@@ -1862,35 +1890,20 @@
       "tests.test_utils.test_echo::test_echo_with_capsys",
       "tests.test_utils.test_echo::test_echo_writing_to_standard_error",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test5- cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test5- less ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test5- less]",
@@ -1904,23 +1917,14 @@
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test6-cat]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test6-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- cat ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-cat ]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-cat]",
-      "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]",
       "tests.test_utils.test_echo_via_pager::test_echo_via_pager_yields_before_exception",
       "tests.test_utils.test_format_filename::test_filename_formatting",
       "tests.test_utils.test_make_default_short_help::test_make_default_short_help[-abbreviation inside sentence]",
@@ -2417,12 +2421,14 @@
       "tests.test_utils.test_style::test_unstyle_other_ansi[\\x1b[?25lx y\\x1b[?25h-x y]",
       "tests.test_utils.test_style::test_unstyle_other_ansi[x\\x1b[3~y-xy]"
     ],
-    "collected": 2432,
+    "collected": 2459,
     "runs": 2,
     "durations_sec": [
-      7.53,
-      7.53
-    ]
+      7.87,
+      7.24
+    ],
+    "runner": "docker",
+    "image": "triverify/click-env:cf19179e8e2f"
   },
   "diversity": {
     "passed": true,
@@ -2561,21 +2567,21 @@
         "oracle": [
           {
             "reward": 1.0,
-            "seconds": 7.25,
+            "seconds": 7.3,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.29,
+            "seconds": 7.24,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.52,
+            "seconds": 7.17,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -2583,7 +2589,7 @@
         ],
         "nop": {
           "reward": 0.0,
-          "seconds": 7.23,
+          "seconds": 7.56,
           "regressions": [],
           "features_passing_at_base": []
         },
@@ -2672,7 +2678,10 @@
               "description": "2 \u2192 3",
               "killed": true,
               "killed_by": [
-                "test_every_unit_multiplier"
+                "test_command_line_integration",
+                "test_every_unit_multiplier",
+                "test_fractional_sizes_are_exact",
+                "test_min_and_max_are_inclusive"
               ]
             },
             {
@@ -2682,7 +2691,8 @@
               "description": "0 \u2192 1",
               "killed": true,
               "killed_by": [
-                "test_every_unit_multiplier"
+                "test_integers_pass_through_and_booleans_do_not",
+                "test_plain_numbers_and_bytes_unit"
               ]
             }
           ]
@@ -2706,21 +2716,13 @@
           "option"
         ],
         "passed": true,
-        "seconds": 37.8,
+        "seconds": 40.4,
         "round": 0
       },
       "harbor": {
         "lint": {
-          "exit_code": 1,
-          "findings": [
-            {
-              "rule": "shared-verifier",
-              "path": "/home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/bytesize-param-type/task.toml",
-              "message": "Verifier shares the agent sandbox; set verifier.environment_mode = \"separate\", including shared step overrides.",
-              "line": null,
-              "column": null
-            }
-          ],
+          "exit_code": 0,
+          "findings": [],
           "stderr_tail": ""
         },
         "nop": {
@@ -2728,39 +2730,14 @@
           "agent": "nop",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/bytesize-param-type -a nop -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/bytesize-param-type-nop --no-delete -y",
           "exit_code": 0,
-          "seconds": 44.6,
+          "seconds": 38.0,
           "reward": 0.0,
           "expected": 0.0,
           "ok": true,
           "errors": [],
           "grading": {
             "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "regressions": [],
             "features_passed": [],
             "features_failed": [
               "tests.test_tv_bytesize_param_type::test_command_line_integration",
@@ -2778,10 +2755,10 @@
               "tests.test_tv_bytesize_param_type::test_works_with_multiple_and_envvar"
             ],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "Tip: There are many benchmarks available in Harbor's registry.\nRun `harbor datasets list` to see all available datasets.\n\n  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:39 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 39s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop/2026-11-25__12-57-35/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop/2026-11-25__12-57-35`\n\n",
+          "stdout_tail": "Tip: There are many benchmarks available in Harbor's registry.\nRun `harbor datasets list` to see all available datasets.\n\n  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:33 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 33s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop/2026-11-25__13-11-58/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-nop/2026-11-25__13-11-58`\n\n",
           "stderr_tail": ""
         },
         "oracle": {
@@ -2789,39 +2766,14 @@
           "agent": "oracle",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/bytesize-param-type -a oracle -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/bytesize-param-type-oracle --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.0,
-          "reward": 0.0,
+          "seconds": 36.8,
+          "reward": 1.0,
           "expected": 1.0,
-          "ok": false,
+          "ok": true,
           "errors": [],
           "grading": {
-            "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "reward": 1.0,
+            "regressions": [],
             "features_passed": [
               "tests.test_tv_bytesize_param_type::test_command_line_integration",
               "tests.test_tv_bytesize_param_type::test_every_unit_multiplier",
@@ -2839,10 +2791,10 @@
             ],
             "features_failed": [],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle/2026-11-25__12-58-20/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle/2026-11-25__12-58-20`\n\n",
+          "stdout_tail": "  1/1 Mean: 1.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle/2026-11-25__13-12-36/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/bytesize-param-type-oracle/2026-11-25__13-12-36`\n\n",
           "stderr_tail": ""
         }
       },
@@ -2853,7 +2805,7 @@
           "model": "claude-opus-5-5"
         }
       ],
-      "passed": false
+      "passed": true
     },
     {
       "id": "choice-unique-prefix-matching",
@@ -2891,21 +2843,21 @@
         "oracle": [
           {
             "reward": 1.0,
-            "seconds": 7.16,
+            "seconds": 7.22,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.25,
+            "seconds": 7.24,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.37,
+            "seconds": 7.18,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -2913,7 +2865,7 @@
         ],
         "nop": {
           "reward": 0.0,
-          "seconds": 7.38,
+          "seconds": 7.5,
           "regressions": [],
           "features_passing_at_base": []
         },
@@ -3037,9 +2989,9 @@
               "killed": true,
               "killed_by": [
                 "test_ambiguous_prefix_lists_candidates_in_choice_order",
-                "test_case_insensitive_prefix",
                 "test_case_sensitive_prefix_respects_case",
-                "test_command_line_errors"
+                "test_command_line_errors",
+                "test_enum_choices_use_member_names"
               ]
             },
             {
@@ -3112,10 +3064,8 @@
               "description": "0 \u2192 1",
               "killed": true,
               "killed_by": [
-                "test_ambiguous_prefix_lists_candidates_in_choice_order",
                 "test_case_insensitive_prefix",
-                "test_case_sensitive_prefix_respects_case",
-                "test_command_line_errors"
+                "test_enum_choices_use_member_names"
               ]
             }
           ]
@@ -3134,21 +3084,13 @@
           "option"
         ],
         "passed": true,
-        "seconds": 36.0,
+        "seconds": 43.0,
         "round": 0
       },
       "harbor": {
         "lint": {
-          "exit_code": 1,
-          "findings": [
-            {
-              "rule": "shared-verifier",
-              "path": "/home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/choice-unique-prefix-matching/task.toml",
-              "message": "Verifier shares the agent sandbox; set verifier.environment_mode = \"separate\", including shared step overrides.",
-              "line": null,
-              "column": null
-            }
-          ],
+          "exit_code": 0,
+          "findings": [],
           "stderr_tail": ""
         },
         "nop": {
@@ -3156,39 +3098,14 @@
           "agent": "nop",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/choice-unique-prefix-matching -a nop -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/choice-unique-prefix-matching-nop --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.0,
+          "seconds": 36.5,
           "reward": 0.0,
           "expected": 0.0,
           "ok": true,
           "errors": [],
           "grading": {
             "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "regressions": [],
             "features_passed": [],
             "features_failed": [
               "tests.test_tv_choice_unique_prefix_matching::test_ambiguous_prefix_lists_candidates_in_choice_order",
@@ -3205,10 +3122,10 @@
               "tests.test_tv_choice_unique_prefix_matching::test_unknown_value_keeps_invalid_choice_message"
             ],
             "n_fail_to_pass": 12,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop/2026-11-25__12-58-47/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop/2026-11-25__12-58-47`\n\n",
+          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop/2026-11-25__13-13-14/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-nop/2026-11-25__13-13-14`\n\n",
           "stderr_tail": ""
         },
         "oracle": {
@@ -3216,39 +3133,14 @@
           "agent": "oracle",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/choice-unique-prefix-matching -a oracle -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/choice-unique-prefix-matching-oracle --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.3,
-          "reward": 0.0,
+          "seconds": 36.8,
+          "reward": 1.0,
           "expected": 1.0,
-          "ok": false,
+          "ok": true,
           "errors": [],
           "grading": {
-            "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "reward": 1.0,
+            "regressions": [],
             "features_passed": [
               "tests.test_tv_choice_unique_prefix_matching::test_ambiguous_prefix_lists_candidates_in_choice_order",
               "tests.test_tv_choice_unique_prefix_matching::test_case_insensitive_prefix",
@@ -3265,10 +3157,10 @@
             ],
             "features_failed": [],
             "n_fail_to_pass": 12,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle/2026-11-25__12-59-13/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle/2026-11-25__12-59-13`\n\n",
+          "stdout_tail": "  1/1 Mean: 1.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle/2026-11-25__13-13-50/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/choice-unique-prefix-matching-oracle/2026-11-25__13-13-50`\n\n",
           "stderr_tail": ""
         }
       },
@@ -3279,7 +3171,7 @@
           "model": "claude-opus-5-5"
         }
       ],
-      "passed": false
+      "passed": true
     },
     {
       "id": "group-command-aliases",
@@ -3318,21 +3210,21 @@
         "oracle": [
           {
             "reward": 1.0,
-            "seconds": 7.05,
+            "seconds": 7.19,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.01,
+            "seconds": 7.37,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.03,
+            "seconds": 7.28,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -3340,7 +3232,7 @@
         ],
         "nop": {
           "reward": 0.0,
-          "seconds": 7.36,
+          "seconds": 7.96,
           "regressions": [],
           "features_passing_at_base": []
         },
@@ -3522,10 +3414,8 @@
               "description": "NotIn \u2192 In",
               "killed": true,
               "killed_by": [
-                "test_aliases_from_group_constructor",
-                "test_aliases_in_chain_mode",
-                "test_every_alias_and_canonical_name_work",
-                "test_get_command_and_list_commands"
+                "test_invoke_through_alias",
+                "test_invoked_subcommand_is_canonical_name"
               ]
             },
             {
@@ -3563,21 +3453,13 @@
           "pass_context"
         ],
         "passed": true,
-        "seconds": 44.0,
+        "seconds": 51.7,
         "round": 0
       },
       "harbor": {
         "lint": {
-          "exit_code": 1,
-          "findings": [
-            {
-              "rule": "shared-verifier",
-              "path": "/home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/group-command-aliases/task.toml",
-              "message": "Verifier shares the agent sandbox; set verifier.environment_mode = \"separate\", including shared step overrides.",
-              "line": null,
-              "column": null
-            }
-          ],
+          "exit_code": 0,
+          "findings": [],
           "stderr_tail": ""
         },
         "nop": {
@@ -3585,39 +3467,14 @@
           "agent": "nop",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/group-command-aliases -a nop -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/group-command-aliases-nop --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.6,
+          "seconds": 36.7,
           "reward": 0.0,
           "expected": 0.0,
           "ok": true,
           "errors": [],
           "grading": {
             "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "regressions": [],
             "features_passed": [],
             "features_failed": [
               "tests.test_tv_group_command_aliases::test_alias_cannot_be_reused",
@@ -3635,10 +3492,10 @@
               "tests.test_tv_group_command_aliases::test_unknown_command_error_is_unchanged"
             ],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop/2026-11-25__12-59-40/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop/2026-11-25__12-59-40`\n\n",
+          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop/2026-11-25__13-14-28/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-nop/2026-11-25__13-14-28`\n\n",
           "stderr_tail": ""
         },
         "oracle": {
@@ -3646,39 +3503,14 @@
           "agent": "oracle",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/group-command-aliases -a oracle -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/group-command-aliases-oracle --no-delete -y",
           "exit_code": 0,
-          "seconds": 27.7,
-          "reward": 0.0,
+          "seconds": 36.7,
+          "reward": 1.0,
           "expected": 1.0,
-          "ok": false,
+          "ok": true,
           "errors": [],
           "grading": {
-            "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "reward": 1.0,
+            "regressions": [],
             "features_passed": [
               "tests.test_tv_group_command_aliases::test_alias_cannot_be_reused",
               "tests.test_tv_group_command_aliases::test_alias_cannot_shadow_existing_command",
@@ -3696,10 +3528,10 @@
             ],
             "features_failed": [],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:22 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 22s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle/2026-11-25__13-00-07/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle/2026-11-25__13-00-07`\n\n",
+          "stdout_tail": "  1/1 Mean: 1.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle/2026-11-25__13-15-05/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/group-command-aliases-oracle/2026-11-25__13-15-05`\n\n",
           "stderr_tail": ""
         }
       },
@@ -3710,7 +3542,7 @@
           "model": "claude-opus-5-5"
         }
       ],
-      "passed": false
+      "passed": true
     },
     {
       "id": "mutually-exclusive-options",
@@ -3749,7 +3581,7 @@
         "oracle": [
           {
             "reward": 1.0,
-            "seconds": 7.35,
+            "seconds": 7.17,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -3763,7 +3595,7 @@
           },
           {
             "reward": 1.0,
-            "seconds": 6.93,
+            "seconds": 7.35,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -3771,7 +3603,7 @@
         ],
         "nop": {
           "reward": 0.0,
-          "seconds": 7.11,
+          "seconds": 7.37,
           "regressions": [],
           "features_passing_at_base": []
         },
@@ -3996,21 +3828,13 @@
           "option"
         ],
         "passed": true,
-        "seconds": 39.8,
+        "seconds": 47.4,
         "round": 0
       },
       "harbor": {
         "lint": {
-          "exit_code": 1,
-          "findings": [
-            {
-              "rule": "shared-verifier",
-              "path": "/home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/mutually-exclusive-options/task.toml",
-              "message": "Verifier shares the agent sandbox; set verifier.environment_mode = \"separate\", including shared step overrides.",
-              "line": null,
-              "column": null
-            }
-          ],
+          "exit_code": 0,
+          "findings": [],
           "stderr_tail": ""
         },
         "nop": {
@@ -4018,39 +3842,14 @@
           "agent": "nop",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/mutually-exclusive-options -a nop -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/mutually-exclusive-options-nop --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.7,
+          "seconds": 37.5,
           "reward": 0.0,
           "expected": 0.0,
           "ok": true,
           "errors": [],
           "grading": {
             "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "regressions": [],
             "features_passed": [],
             "features_failed": [
               "tests.test_tv_mutually_exclusive_options::test_attribute_is_normalized",
@@ -4068,10 +3867,10 @@
               "tests.test_tv_mutually_exclusive_options::test_unknown_parameter_name_is_a_type_error"
             ],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop/2026-11-25__13-00-35/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop/2026-11-25__13-00-35`\n\n",
+          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:33 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 33s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop/2026-11-25__13-15-42/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-nop/2026-11-25__13-15-42`\n\n",
           "stderr_tail": ""
         },
         "oracle": {
@@ -4079,39 +3878,14 @@
           "agent": "oracle",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/mutually-exclusive-options -a oracle -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/mutually-exclusive-options-oracle --no-delete -y",
           "exit_code": 0,
-          "seconds": 27.0,
-          "reward": 0.0,
+          "seconds": 36.9,
+          "reward": 1.0,
           "expected": 1.0,
-          "ok": false,
+          "ok": true,
           "errors": [],
           "grading": {
-            "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "reward": 1.0,
+            "regressions": [],
             "features_passed": [
               "tests.test_tv_mutually_exclusive_options::test_attribute_is_normalized",
               "tests.test_tv_mutually_exclusive_options::test_check_is_skipped_during_resilient_parsing",
@@ -4129,10 +3903,10 @@
             ],
             "features_failed": [],
             "n_fail_to_pass": 13,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 22s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle/2026-11-25__13-01-02/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle/2026-11-25__13-01-02`\n\n",
+          "stdout_tail": "  1/1 Mean: 1.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle/2026-11-25__13-16-20/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/mutually-exclusive-options-oracle/2026-11-25__13-16-20`\n\n",
           "stderr_tail": ""
         }
       },
@@ -4143,7 +3917,7 @@
           "model": "claude-opus-5-5"
         }
       ],
-      "passed": false
+      "passed": true
     },
     {
       "id": "option-help-sections",
@@ -4180,21 +3954,21 @@
         "oracle": [
           {
             "reward": 1.0,
-            "seconds": 7.13,
+            "seconds": 7.3,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.42,
+            "seconds": 7.27,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
           },
           {
             "reward": 1.0,
-            "seconds": 7.28,
+            "seconds": 7.38,
             "regressions": [],
             "features_failed": [],
             "log_tail": ""
@@ -4202,7 +3976,7 @@
         ],
         "nop": {
           "reward": 0.0,
-          "seconds": 7.73,
+          "seconds": 7.61,
           "regressions": [],
           "features_passing_at_base": []
         },
@@ -4319,8 +4093,10 @@
               "description": "delete call statement",
               "killed": true,
               "killed_by": [
-                "test_help_without_sections_is_unchanged",
-                "test_unsectioned_options_and_help_stay_under_options"
+                "test_arguments_section_is_unaffected",
+                "test_group_sections_come_before_commands",
+                "test_no_options_heading_when_every_option_has_a_section",
+                "test_options_are_grouped_under_their_sections"
               ]
             }
           ]
@@ -4339,21 +4115,13 @@
           "option"
         ],
         "passed": true,
-        "seconds": 34.5,
+        "seconds": 38.5,
         "round": 0
       },
       "harbor": {
         "lint": {
-          "exit_code": 1,
-          "findings": [
-            {
-              "rule": "shared-verifier",
-              "path": "/home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/option-help-sections/task.toml",
-              "message": "Verifier shares the agent sandbox; set verifier.environment_mode = \"separate\", including shared step overrides.",
-              "line": null,
-              "column": null
-            }
-          ],
+          "exit_code": 0,
+          "findings": [],
           "stderr_tail": ""
         },
         "nop": {
@@ -4361,39 +4129,14 @@
           "agent": "nop",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/option-help-sections -a nop -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/option-help-sections-nop --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.4,
+          "seconds": 36.4,
           "reward": 0.0,
           "expected": 0.0,
           "ok": true,
           "errors": [],
           "grading": {
             "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "regressions": [],
             "features_passed": [],
             "features_failed": [
               "tests.test_tv_option_help_sections::test_arguments_section_is_unaffected",
@@ -4409,10 +4152,10 @@
               "tests.test_tv_option_help_sections::test_unsectioned_options_and_help_stay_under_options"
             ],
             "n_fail_to_pass": 11,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop/2026-11-25__13-01-30/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop/2026-11-25__13-01-30`\n\n",
+          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 nop\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop/2026-11-25__13-16-57/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-nop/2026-11-25__13-16-57`\n\n",
           "stderr_tail": ""
         },
         "oracle": {
@@ -4420,39 +4163,14 @@
           "agent": "oracle",
           "command": "harbor run -p /home/runner/work/triverify-task-factory/triverify-task-factory/output/tasks/option-help-sections -a oracle -k 1 -o /home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbor-jobs/option-help-sections-oracle --no-delete -y",
           "exit_code": 0,
-          "seconds": 26.4,
-          "reward": 0.0,
+          "seconds": 36.5,
+          "reward": 1.0,
           "expected": 1.0,
-          "ok": false,
+          "ok": true,
           "errors": [],
           "grading": {
-            "reward": 0.0,
-            "regressions": [
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test0-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test1-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test2-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test3-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test4-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test7-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test8-less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less ]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9- less]",
-              "tests.test_utils.test_echo_via_pager::test_echo_via_pager[test9-less]"
-            ],
+            "reward": 1.0,
+            "regressions": [],
             "features_passed": [
               "tests.test_tv_option_help_sections::test_arguments_section_is_unaffected",
               "tests.test_tv_option_help_sections::test_group_sections_come_before_commands",
@@ -4468,10 +4186,10 @@
             ],
             "features_failed": [],
             "n_fail_to_pass": 11,
-            "n_pass_to_pass": 2406,
+            "n_pass_to_pass": 2410,
             "pytest_exit_code": 1
           },
-          "stdout_tail": "  1/1 Mean: 0.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:21 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle/2026-11-25__13-01-56/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle/2026-11-25__13-01-56`\n\n",
+          "stdout_tail": "  1/1 Mean: 1.000 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 0:00:32 0:00:00\nadhoc \u2022 oracle\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Trials \u2503 Exceptions \u2503  Mean \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Reward \u2503 Count \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 32s\nResults written to \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle/2026-11-25__13-17-34/result.json\nInspect results by running `harbor view \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle`\nShare results by running `harbor upload \n/home/runner/work/triverify-task-factory/triverify-task-factory/.triverify/harbo\nr-jobs/option-help-sections-oracle/2026-11-25__13-17-34`\n\n",
           "stderr_tail": ""
         }
       },
@@ -4482,8 +4200,8 @@
           "model": "claude-opus-5-5"
         }
       ],
-      "passed": false
+      "passed": true
     }
   ],
-  "all_passed": false
+  "all_passed": true
 }

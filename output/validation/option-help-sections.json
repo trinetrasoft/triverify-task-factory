@@ -28,21 +28,21 @@
   "oracle": [
     {
       "reward": 1.0,
-      "seconds": 7.13,
+      "seconds": 7.3,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.42,
+      "seconds": 7.27,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
     },
     {
       "reward": 1.0,
-      "seconds": 7.28,
+      "seconds": 7.38,
       "regressions": [],
       "features_failed": [],
       "log_tail": ""
@@ -50,7 +50,7 @@
   ],
   "nop": {
     "reward": 0.0,
-    "seconds": 7.73,
+    "seconds": 7.61,
     "regressions": [],
     "features_passing_at_base": []
   },
@@ -167,8 +167,10 @@
         "description": "delete call statement",
         "killed": true,
         "killed_by": [
-          "test_help_without_sections_is_unchanged",
-          "test_unsectioned_options_and_help_stay_under_options"
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_no_options_heading_when_every_option_has_a_section",
+          "test_options_are_grouped_under_their_sections"
         ]
       }
     ]
@@ -187,6 +189,6 @@
     "option"
   ],
   "passed": true,
-  "seconds": 34.5,
+  "seconds": 38.5,
   "round": 0
 }
