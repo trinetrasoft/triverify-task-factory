@@ -97,9 +97,11 @@ check this.
 ```bash
 git clone https://github.com/trinetrasoft/triverify-task-factory && cd triverify-task-factory
 pip install -e . "harbor==0.25.*"
-python -m venv /tmp/target && /tmp/target/bin/pip install pytest==8.4.1
-export TRIVERIFY_TARGET_PYTHON=/tmp/target/bin/python
-python -m triverify run --config configs/click.toml --provider replay
+# recommended: run every gate inside the task image (needs Docker), same as CI
+python -m triverify run --config configs/click.toml --provider replay --runner docker
+# without Docker: a local interpreter with pytest
+#   python -m venv /tmp/target && /tmp/target/bin/pip install pytest==8.4.1
+#   TRIVERIFY_TARGET_PYTHON=/tmp/target/bin/python python -m triverify run --config configs/click.toml --provider replay
 # or the official matrix for one package:
 harbor run -p output/tasks/bytesize-param-type -a nop    -k 1 -o jobs --no-delete -y
 harbor run -p output/tasks/bytesize-param-type -a oracle -k 1 -o jobs --no-delete -y
