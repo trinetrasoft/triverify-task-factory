@@ -1,0 +1,82 @@
+diff --git a/src/click/core.py b/src/click/core.py
+index e4b6b57..741e64e 100644
+--- a/src/click/core.py
++++ b/src/click/core.py
+@@ -1294,16 +1294,33 @@ class Command:
+                 formatter.write_text(text)
+ 
+     def format_options(self, ctx: Context, formatter: HelpFormatter) -> None:
+-        """Writes all the options into the formatter if they exist."""
+-        opts = []
++        """Writes all the options into the formatter if they exist.
++
++        Options without a :attr:`Option.help_section` are listed under
++        "Options". Options that share a section are listed together under that
++        section's heading, after "Options", in order of first appearance.
++
++        .. versionchanged:: 8.6
++            Supports :attr:`Option.help_section`.
++        """
++        sections: dict[str | None, list[tuple[str, str]]] = {None: []}
++
+         for param in self.get_params(ctx):
+             rv = param.get_help_record(ctx)
++
+             if rv is not None and not isinstance(param, Argument):
+-                opts.append(rv)
++                section = getattr(param, "help_section", None)
++                sections.setdefault(section, []).append(rv)
++
++        default = sections.pop(None)
+ 
+-        if opts:
++        if default:
+             with formatter.section(_("Options")):
+-                formatter.write_dl(opts)
++                formatter.write_dl(default)
++
++        for heading, records in sections.items():
++            with formatter.section(heading):
++                formatter.write_dl(records)
+ 
+     def format_arguments(self, ctx: Context, formatter: HelpFormatter) -> None:
+         """Writes all arguments into the formatter, if at least one is documented.
+@@ -2932,8 +2949,13 @@ class Option(Parameter):
+                                context.
+     :param help: the help string.
+     :param hidden: hide this option from help outputs.
++    :param help_section: The heading this option is listed under on the help
++        page. Options without a section are listed under "Options".
+     :param attrs: Other command arguments described in :class:`Parameter`.
+ 
++    .. versionchanged:: 8.6
++        Added the ``help_section`` parameter.
++
+     .. versionchanged:: 8.4.0
+         Non-basic ``flag_value`` types (not ``str``, ``int``, ``float``, or
+         ``bool``) are passed through unchanged instead of being stringified.
+@@ -2979,6 +3001,7 @@ class Option(Parameter):
+     show_default: bool | str | None
+     show_choices: bool
+     show_envvar: bool
++    help_section: str | None
+ 
+     def __init__(
+         self,
+@@ -2999,6 +3022,7 @@ class Option(Parameter):
+         show_choices: bool = True,
+         show_envvar: bool = False,
+         deprecated: bool | str = False,
++        help_section: str | None = None,
+         **attrs: t.Any,
+     ) -> None:
+         super().__init__(
+@@ -3053,6 +3077,8 @@ class Option(Parameter):
+         self.show_default = show_default
+         self.show_choices = show_choices
+         self.show_envvar = show_envvar
++        #: Heading this option is listed under on the help page.
++        self.help_section = help_section
+ 
+         # Phase 5: validate. Raises on illegal kwarg combinations.
+         self._validate(prompt, deprecated)

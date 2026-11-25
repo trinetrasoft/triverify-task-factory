@@ -1,0 +1,118 @@
+diff --git a/src/click/types.py b/src/click/types.py
+index b6e98a9..dfc588c 100644
+--- a/src/click/types.py
++++ b/src/click/types.py
+@@ -352,6 +352,13 @@ class Choice(ParamType[_ValueT_co], t.Generic[_ValueT_co]):
+ 
+     :param case_sensitive: Set to false to make choices case
+         insensitive. Defaults to true.
++    :param allow_prefix: Set to true to also accept a value that is a prefix
++        of exactly one choice. An exact match always wins, and a prefix that
++        matches several choices fails with a message listing them. Defaults to
++        false.
++
++    .. versionchanged:: 8.6
++        Added the ``allow_prefix`` parameter.
+ 
+     .. versionchanged:: 8.4.0
+         Now generic in the choice value type. Parameterize with the type of
+@@ -371,12 +378,17 @@ class Choice(ParamType[_ValueT_co], t.Generic[_ValueT_co]):
+ 
+     choices: tuple[_ValueT_co, ...]
+     case_sensitive: bool
++    allow_prefix: bool
+ 
+     def __init__(
+-        self, choices: cabc.Iterable[_ValueT_co], case_sensitive: bool = True
++        self,
++        choices: cabc.Iterable[_ValueT_co],
++        case_sensitive: bool = True,
++        allow_prefix: bool = False,
+     ) -> None:
+         self.choices = tuple(choices)
+         self.case_sensitive = case_sensitive
++        self.allow_prefix = allow_prefix
+ 
+     def to_info_dict(self) -> ChoiceInfoDict[_ValueT_co]:
+         return {
+@@ -458,22 +470,47 @@ class Choice(ParamType[_ValueT_co], t.Generic[_ValueT_co]):
+         For a given value from the parser, normalize it and find its
+         matching normalized value in the list of choices. Then return the
+         matched "original" choice.
++
++        If :attr:`allow_prefix` is enabled and there is no exact match, a
++        value that is the prefix of exactly one normalized choice selects
++        that choice.
++
++        .. versionchanged:: 8.6
++            Supports unique prefixes when ``allow_prefix`` is enabled.
+         """
+         normed_value = self.normalize_choice(choice=value, ctx=ctx)
+         normalized_mapping = self._normalized_mapping(ctx=ctx)
+ 
+-        try:
+-            return next(
+-                original
++        for original, normalized in normalized_mapping.items():
++            if normalized == normed_value:
++                return original
++
++        if self.allow_prefix and normed_value:
++            candidates = [
++                (original, normalized)
+                 for original, normalized in normalized_mapping.items()
+-                if normalized == normed_value
+-            )
+-        except StopIteration:
+-            self.fail(
+-                self.get_invalid_choice_message(value=value, ctx=ctx),
+-                param=param,
+-                ctx=ctx,
+-            )
++                if normalized.startswith(normed_value)
++            ]
++
++            if len(candidates) == 1:
++                return candidates[0][0]
++
++            if candidates:
++                self.fail(
++                    self.get_ambiguous_choice_message(
++                        value=value,
++                        candidates=[normalized for _, normalized in candidates],
++                        ctx=ctx,
++                    ),
++                    param=param,
++                    ctx=ctx,
++                )
++
++        self.fail(
++            self.get_invalid_choice_message(value=value, ctx=ctx),
++            param=param,
++            ctx=ctx,
++        )
+ 
+     def get_invalid_choice_message(self, value: t.Any, ctx: Context | None) -> str:
+         """Get the error message when the given choice is invalid.
+@@ -489,6 +526,21 @@ class Choice(ParamType[_ValueT_co], t.Generic[_ValueT_co]):
+             len(self.choices),
+         ).format(value=value, choice=choices_str, choices=choices_str)
+ 
++    def get_ambiguous_choice_message(
++        self, value: t.Any, candidates: cabc.Sequence[str], ctx: Context | None
++    ) -> str:
++        """Get the error message when a prefix matches several choices.
++
++        :param value: The ambiguous value.
++        :param candidates: The normalized choices the value is a prefix of,
++            in the order the choices were given.
++
++        .. versionadded:: 8.6
++        """
++        return _("{value!r} is ambiguous; it could be one of {choices}.").format(
++            value=value, choices=", ".join(map(repr, candidates))
++        )
++
+     def __repr__(self) -> str:
+         return _("Choice({choices})").format(choices=list(self.choices))
+ 

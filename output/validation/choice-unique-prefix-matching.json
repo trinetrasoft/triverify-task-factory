@@ -1,0 +1,277 @@
+{
+  "id": "choice-unique-prefix-matching",
+  "feature_module": "tests/test_tv_choice_unique_prefix_matching.py",
+  "gates": {
+    "patch_applies": true,
+    "no_leakage": true,
+    "novel_upstream": true,
+    "oracle_reward_1": true,
+    "test_count_6_14": true,
+    "nop_reward_0": true,
+    "mutation_score": true
+  },
+  "failures": [],
+  "upstream_hits": {},
+  "fail_to_pass": [
+    "tests.test_tv_choice_unique_prefix_matching::test_ambiguous_prefix_lists_candidates_in_choice_order",
+    "tests.test_tv_choice_unique_prefix_matching::test_case_insensitive_prefix",
+    "tests.test_tv_choice_unique_prefix_matching::test_case_sensitive_prefix_respects_case",
+    "tests.test_tv_choice_unique_prefix_matching::test_command_line_errors",
+    "tests.test_tv_choice_unique_prefix_matching::test_empty_value_is_not_a_prefix",
+    "tests.test_tv_choice_unique_prefix_matching::test_enum_choices_use_member_names",
+    "tests.test_tv_choice_unique_prefix_matching::test_exact_match_wins_over_longer_choice",
+    "tests.test_tv_choice_unique_prefix_matching::test_info_dict_and_message_hook",
+    "tests.test_tv_choice_unique_prefix_matching::test_prefixes_are_rejected_when_disabled",
+    "tests.test_tv_choice_unique_prefix_matching::test_token_normalize_func_applies_to_prefixes",
+    "tests.test_tv_choice_unique_prefix_matching::test_unique_prefix_resolves_to_choice",
+    "tests.test_tv_choice_unique_prefix_matching::test_unknown_value_keeps_invalid_choice_message"
+  ],
+  "oracle": [
+    {
+      "reward": 1.0,
+      "seconds": 7.16,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.25,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.37,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    }
+  ],
+  "nop": {
+    "reward": 0.0,
+    "seconds": 7.38,
+    "regressions": [],
+    "features_passing_at_base": []
+  },
+  "mutation": {
+    "control_passed": true,
+    "total": 16,
+    "killed": 15,
+    "score": 0.938,
+    "mutants": [
+      {
+        "path": "src/click/types.py",
+        "line": 391,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 484,
+        "operator": "reverse-iter",
+        "description": "iterate in reverse order",
+        "killed": false,
+        "killed_by": []
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 488,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 509,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_case_sensitive_prefix_respects_case",
+          "test_empty_value_is_not_a_prefix",
+          "test_prefixes_are_rejected_when_disabled",
+          "test_unknown_value_keeps_invalid_choice_message"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 386,
+        "operator": "bool",
+        "description": "True \u2192 False",
+        "killed": true,
+        "killed_by": [
+          "test_case_sensitive_prefix_respects_case",
+          "test_enum_choices_use_member_names",
+          "test_info_dict_and_message_hook"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 387,
+        "operator": "bool",
+        "description": "False \u2192 True",
+        "killed": true,
+        "killed_by": [
+          "test_prefixes_are_rejected_when_disabled"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 485,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 488,
+        "operator": "boolop",
+        "description": "And \u2192 Or",
+        "killed": true,
+        "killed_by": [
+          "test_empty_value_is_not_a_prefix",
+          "test_prefixes_are_rejected_when_disabled"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 495,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 498,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 485,
+        "operator": "cmp",
+        "description": "Eq \u2192 NotEq",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 486,
+        "operator": "return-none",
+        "description": "return None",
+        "killed": true,
+        "killed_by": [
+          "test_command_line_errors",
+          "test_exact_match_wins_over_longer_choice",
+          "test_unique_prefix_resolves_to_choice"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 496,
+        "operator": "return-none",
+        "description": "return None",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 499,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_command_line_errors",
+          "test_enum_choices_use_member_names"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 495,
+        "operator": "int",
+        "description": "1 \u2192 2",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 496,
+        "operator": "int",
+        "description": "0 \u2192 1",
+        "killed": true,
+        "killed_by": [
+          "test_ambiguous_prefix_lists_candidates_in_choice_order",
+          "test_case_insensitive_prefix",
+          "test_case_sensitive_prefix_respects_case",
+          "test_command_line_errors"
+        ]
+      }
+    ]
+  },
+  "touched_symbols": [
+    "src/click/types.py:Choice.__init__",
+    "src/click/types.py:Choice.convert",
+    "src/click/types.py:Choice.get_ambiguous_choice_message"
+  ],
+  "api_refs": [
+    "BadParameter",
+    "Choice",
+    "CliRunner",
+    "command",
+    "echo",
+    "option"
+  ],
+  "passed": true,
+  "seconds": 36.0,
+  "round": 0
+}

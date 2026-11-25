@@ -1,0 +1,111 @@
+diff --git a/src/click/core.py b/src/click/core.py
+index e4b6b57..77ceb97 100644
+--- a/src/click/core.py
++++ b/src/click/core.py
+@@ -984,6 +984,11 @@ class Command:
+                         indicating that the command is deprecated and highlights
+                         its deprecation in --help. The message can be customized
+                         by using a string as the value.
++    :param mutually_exclusive: Groups of parameter names. The user may provide
++        at most one parameter of each group; defaults never count as provided.
++
++    .. versionchanged:: 8.6
++        Added the ``mutually_exclusive`` parameter.
+ 
+     .. versionchanged:: 8.2
+         This is the base class for all commands, not ``BaseCommand``.
+@@ -1032,6 +1037,7 @@ class Command:
+     no_args_is_help: bool
+     hidden: bool
+     deprecated: bool | str
++    mutually_exclusive: tuple[tuple[str, ...], ...]
+ 
+     def __init__(
+         self,
+@@ -1047,6 +1053,7 @@ class Command:
+         no_args_is_help: bool = False,
+         hidden: bool = False,
+         deprecated: bool | str = False,
++        mutually_exclusive: cabc.Sequence[cabc.Sequence[str]] | None = None,
+     ) -> None:
+         #: the name the command thinks it has.  Upon registering a command
+         #: on a :class:`Group` the group will default the command name
+@@ -1077,6 +1084,18 @@ class Command:
+         self.hidden = hidden
+         self.deprecated = deprecated
+ 
++        groups = tuple(tuple(group) for group in mutually_exclusive or ())
++
++        for group in groups:
++            if len(set(group)) < 2:
++                raise ValueError(
++                    "Each mutually exclusive group needs at least two different"
++                    f" parameter names, got {list(group)!r}."
++                )
++
++        #: Groups of parameter names of which at most one may be provided.
++        self.mutually_exclusive = groups
++
+     def to_info_dict(self, ctx: Context) -> dict[str, t.Any]:
+         return {
+             "name": self.name,
+@@ -1384,6 +1403,9 @@ class Command:
+             if value is UNSET:
+                 ctx.params[name] = None
+ 
++        if not ctx.resilient_parsing:
++            self.check_mutually_exclusive(ctx)
++
+         if args and not ctx.allow_extra_args and not ctx.resilient_parsing:
+             ctx.fail(
+                 ngettext(
+@@ -1397,6 +1419,49 @@ class Command:
+         ctx._opt_prefixes.update(parser._opt_prefixes)
+         return args
+ 
++    def check_mutually_exclusive(self, ctx: Context) -> None:
++        """Fail if the user provided more than one parameter of a
++        :attr:`mutually_exclusive` group.
++
++        A parameter counts as provided when its value came from the command
++        line, an environment variable or a prompt.
++
++        :raise TypeError: A group names a parameter the command does not have.
++        :raise UsageError: Two or more parameters of a group were provided.
++
++        .. versionadded:: 8.6
++        """
++        if not self.mutually_exclusive:
++            return
++
++        params = {param.name: param for param in self.get_params(ctx) if param.name}
++
++        for group in self.mutually_exclusive:
++            unknown = [name for name in group if name not in params]
++
++            if unknown:
++                raise TypeError(
++                    f"Command {self.name!r} has no parameter named"
++                    f" {', '.join(map(repr, unknown))} for mutually_exclusive."
++                )
++
++            provided = []
++
++            for name in group:
++                source = ctx.get_parameter_source(name)
++
++                if source is not None and source < ParameterSource.DEFAULT_MAP:
++                    provided.append(params[name].get_error_hint(ctx))
++
++            if len(provided) > 1:
++                names = f"{', '.join(provided[:-1])} and {provided[-1]}"
++                raise UsageError(
++                    _("Parameters {names} cannot be used together.").format(
++                        names=names
++                    ),
++                    ctx=ctx,
++                )
++
+     def invoke(self, ctx: Context) -> t.Any:
+         """Given a context, this invokes the attached callback (if it exists)
+         in the right way.

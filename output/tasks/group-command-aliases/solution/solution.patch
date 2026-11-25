@@ -1,0 +1,144 @@
+diff --git a/src/click/core.py b/src/click/core.py
+index e4b6b57..1ebeffa 100644
+--- a/src/click/core.py
++++ b/src/click/core.py
+@@ -984,6 +984,12 @@ class Command:
+                         indicating that the command is deprecated and highlights
+                         its deprecation in --help. The message can be customized
+                         by using a string as the value.
++    :param aliases: Alternative names a :class:`Group` also accepts for this
++        command. They are listed next to the command's name in the group's
++        help page.
++
++    .. versionchanged:: 8.6
++        Added the ``aliases`` parameter.
+ 
+     .. versionchanged:: 8.2
+         This is the base class for all commands, not ``BaseCommand``.
+@@ -1032,6 +1038,7 @@ class Command:
+     no_args_is_help: bool
+     hidden: bool
+     deprecated: bool | str
++    aliases: tuple[str, ...]
+ 
+     def __init__(
+         self,
+@@ -1047,6 +1054,7 @@ class Command:
+         no_args_is_help: bool = False,
+         hidden: bool = False,
+         deprecated: bool | str = False,
++        aliases: cabc.Sequence[str] | None = None,
+     ) -> None:
+         #: the name the command thinks it has.  Upon registering a command
+         #: on a :class:`Group` the group will default the command name
+@@ -1076,6 +1084,8 @@ class Command:
+         self.no_args_is_help = no_args_is_help
+         self.hidden = hidden
+         self.deprecated = deprecated
++        #: Alternative names a group resolves to this command.
++        self.aliases = tuple(aliases or ())
+ 
+     def to_info_dict(self, ctx: Context) -> dict[str, t.Any]:
+         return {
+@@ -1749,6 +1759,11 @@ class Group(Command):
+ 
+         #: The registered subcommands by their exported names.
+         self.commands = commands
++        #: Maps each registered alias to the name of its command.
++        self._aliases: dict[str, str] = {}
++
++        for name, command in commands.items():
++            self._register_aliases(name, command)
+ 
+         if no_args_is_help is None:
+             no_args_is_help = not invoke_without_command
+@@ -1808,8 +1823,46 @@ class Group(Command):
+         if name is None:
+             raise TypeError("Command has no name.")
+         _check_nested_chain(self, name, cmd, register=True)
++
++        owner = self._aliases.get(name)
++
++        if owner is not None and owner != name:
++            raise ValueError(
++                f"Command name {name!r} is already an alias of command {owner!r}."
++            )
++
++        self._register_aliases(name, cmd)
+         self.commands[name] = cmd
+ 
++    def _register_aliases(self, name: str, cmd: Command) -> None:
++        """Register the aliases of ``cmd``, registered under ``name``.
++
++        Replacing a command drops the aliases of the command it replaces.
++        """
++        aliases = getattr(cmd, "aliases", ())
++
++        for alias in aliases:
++            if alias != name and alias in self.commands:
++                raise ValueError(
++                    f"Alias {alias!r} of command {name!r} is already a command name."
++                )
++
++            owner = self._aliases.get(alias)
++
++            if owner is not None and owner != name:
++                raise ValueError(
++                    f"Alias {alias!r} of command {name!r} is already an alias of"
++                    f" command {owner!r}."
++                )
++
++        self._aliases = {
++            alias: owner for alias, owner in self._aliases.items() if owner != name
++        }
++
++        for alias in aliases:
++            if alias != name:
++                self._aliases[alias] = name
++
+     @t.overload
+     def command(self, __func: t.Callable[..., t.Any]) -> Command: ...
+ 
+@@ -1959,8 +2012,17 @@ class Group(Command):
+     def get_command(self, ctx: Context, cmd_name: str) -> Command | None:
+         """Given a context and a command name, this returns a :class:`Command`
+         object if it exists or returns ``None``.
++
++        .. versionchanged:: 8.6
++            Also resolves command aliases.
+         """
+-        return self.commands.get(cmd_name)
++        cmd = self.commands.get(cmd_name)
++        owner = getattr(self, "_aliases", {}).get(cmd_name)
++
++        if cmd is None and owner is not None:
++            cmd = self.commands.get(owner)
++
++        return cmd
+ 
+     def list_commands(self, ctx: Context) -> list[str]:
+         """Returns a list of subcommand names in the order they should appear."""
+@@ -1988,6 +2050,11 @@ class Group(Command):
+             if cmd.hidden:
+                 continue
+ 
++            aliases = getattr(cmd, "aliases", ())
++
++            if aliases:
++                subcommand = f"{subcommand} ({', '.join(aliases)})"
++
+             commands.append((subcommand, cmd))
+ 
+         # allow for 3 times the default spacing
+@@ -2109,6 +2176,11 @@ class Group(Command):
+             if _split_opt(cmd_name)[0]:
+                 self.parse_args(ctx, args)
+             raise NoSuchCommand(cmd_name, possibilities=self.commands, ctx=ctx)
++
++        # An alias resolves to the name its command is registered under.
++        if cmd is not None and cmd_name not in self.commands:
++            cmd_name = getattr(self, "_aliases", {}).get(cmd_name, cmd_name)
++
+         return cmd_name if cmd else None, cmd, args[1:]
+ 
+     def shell_complete(self, ctx: Context, incomplete: str) -> list[CompletionItem]:

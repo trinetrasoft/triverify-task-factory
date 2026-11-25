@@ -1,0 +1,28 @@
+[baseline] running the starting commit's test suite
+[baseline] 2406 pass-to-pass of 2432 collected
+[validate] bytesize-param-type round 0: PASS {'patch_applies': True, 'no_leakage': True, 'novel_upstream': True, 'oracle_reward_1': True, 'test_count_6_14': True, 'nop_reward_0': True, 'mutation_score': True}
+[validate] choice-unique-prefix-matching round 0: PASS {'patch_applies': True, 'no_leakage': True, 'novel_upstream': True, 'oracle_reward_1': True, 'test_count_6_14': True, 'nop_reward_0': True, 'mutation_score': True}
+[validate] group-command-aliases round 0: PASS {'patch_applies': True, 'no_leakage': True, 'novel_upstream': True, 'oracle_reward_1': True, 'test_count_6_14': True, 'nop_reward_0': True, 'mutation_score': True}
+[validate] mutually-exclusive-options round 0: PASS {'patch_applies': True, 'no_leakage': True, 'novel_upstream': True, 'oracle_reward_1': True, 'test_count_6_14': True, 'nop_reward_0': True, 'mutation_score': True}
+[validate] option-help-sections round 0: PASS {'patch_applies': True, 'no_leakage': True, 'novel_upstream': True, 'oracle_reward_1': True, 'test_count_6_14': True, 'nop_reward_0': True, 'mutation_score': True}
+[package] output/tasks/bytesize-param-type
+[package] output/tasks/choice-unique-prefix-matching
+[package] output/tasks/group-command-aliases
+[package] output/tasks/mutually-exclusive-options
+[package] output/tasks/option-help-sections
+[harbor] bytesize-param-type lint: exit=1 findings=1
+[harbor] bytesize-param-type nop: reward=0.0 expected=0.0 ok=True
+[harbor] bytesize-param-type oracle: reward=0.0 expected=1.0 ok=False
+[harbor] choice-unique-prefix-matching lint: exit=1 findings=1
+[harbor] choice-unique-prefix-matching nop: reward=0.0 expected=0.0 ok=True
+[harbor] choice-unique-prefix-matching oracle: reward=0.0 expected=1.0 ok=False
+[harbor] group-command-aliases lint: exit=1 findings=1
+[harbor] group-command-aliases nop: reward=0.0 expected=0.0 ok=True
+[harbor] group-command-aliases oracle: reward=0.0 expected=1.0 ok=False
+[harbor] mutually-exclusive-options lint: exit=1 findings=1
+[harbor] mutually-exclusive-options nop: reward=0.0 expected=0.0 ok=True
+[harbor] mutually-exclusive-options oracle: reward=0.0 expected=1.0 ok=False
+[harbor] option-help-sections lint: exit=1 findings=1
+[harbor] option-help-sections nop: reward=0.0 expected=0.0 ok=True
+[harbor] option-help-sections oracle: reward=0.0 expected=1.0 ok=False
+[report] /home/runner/work/triverify-task-factory/triverify-task-factory/output/REPORT.md all_passed=False

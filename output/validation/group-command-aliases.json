@@ -1,0 +1,280 @@
+{
+  "id": "group-command-aliases",
+  "feature_module": "tests/test_tv_group_command_aliases.py",
+  "gates": {
+    "patch_applies": true,
+    "no_leakage": true,
+    "novel_upstream": true,
+    "oracle_reward_1": true,
+    "test_count_6_14": true,
+    "nop_reward_0": true,
+    "mutation_score": true
+  },
+  "failures": [],
+  "upstream_hits": {},
+  "fail_to_pass": [
+    "tests.test_tv_group_command_aliases::test_alias_cannot_be_reused",
+    "tests.test_tv_group_command_aliases::test_alias_cannot_shadow_existing_command",
+    "tests.test_tv_group_command_aliases::test_aliases_from_group_constructor",
+    "tests.test_tv_group_command_aliases::test_aliases_in_chain_mode",
+    "tests.test_tv_group_command_aliases::test_command_name_cannot_take_an_alias",
+    "tests.test_tv_group_command_aliases::test_command_stores_aliases",
+    "tests.test_tv_group_command_aliases::test_every_alias_and_canonical_name_work",
+    "tests.test_tv_group_command_aliases::test_get_command_and_list_commands",
+    "tests.test_tv_group_command_aliases::test_help_lists_aliases_next_to_names",
+    "tests.test_tv_group_command_aliases::test_invoke_through_alias",
+    "tests.test_tv_group_command_aliases::test_invoked_subcommand_is_canonical_name",
+    "tests.test_tv_group_command_aliases::test_replacing_a_command_drops_its_old_aliases",
+    "tests.test_tv_group_command_aliases::test_unknown_command_error_is_unchanged"
+  ],
+  "oracle": [
+    {
+      "reward": 1.0,
+      "seconds": 7.05,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.01,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.03,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    }
+  ],
+  "nop": {
+    "reward": 0.0,
+    "seconds": 7.36,
+    "regressions": [],
+    "features_passing_at_base": []
+  },
+  "mutation": {
+    "control_passed": true,
+    "total": 16,
+    "killed": 14,
+    "score": 0.875,
+    "mutants": [
+      {
+        "path": "src/click/core.py",
+        "line": 1088,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_alias_cannot_shadow_existing_command",
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1765,
+        "operator": "reverse-iter",
+        "description": "iterate in reverse order",
+        "killed": false,
+        "killed_by": []
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1834,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_alias_cannot_shadow_existing_command",
+          "test_aliases_in_chain_mode",
+          "test_command_name_cannot_take_an_alias"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1858,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_alias_cannot_shadow_existing_command",
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2020,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_every_alias_and_canonical_name_work",
+          "test_get_command_and_list_commands"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2181,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_invoke_through_alias",
+          "test_invoked_subcommand_is_canonical_name"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1830,
+        "operator": "raise-pass",
+        "description": "raise \u2192 pass",
+        "killed": true,
+        "killed_by": [
+          "test_command_name_cannot_take_an_alias"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1852,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_command_name_cannot_take_an_alias"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2023,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_every_alias_and_canonical_name_work",
+          "test_get_command_and_list_commands"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2181,
+        "operator": "boolop",
+        "description": "And \u2192 Or",
+        "killed": false,
+        "killed_by": []
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1829,
+        "operator": "cmp",
+        "description": "IsNot \u2192 Is",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_alias_cannot_shadow_existing_command",
+          "test_aliases_in_chain_mode",
+          "test_command_name_cannot_take_an_alias"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1846,
+        "operator": "raise-pass",
+        "description": "raise \u2192 pass",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_shadow_existing_command",
+          "test_aliases_from_group_constructor"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1863,
+        "operator": "cmp",
+        "description": "NotEq \u2192 Eq",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_command_name_cannot_take_an_alias"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2022,
+        "operator": "cmp",
+        "description": "IsNot \u2192 Is",
+        "killed": true,
+        "killed_by": [
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_every_alias_and_canonical_name_work",
+          "test_get_command_and_list_commands"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 2181,
+        "operator": "cmp",
+        "description": "NotIn \u2192 In",
+        "killed": true,
+        "killed_by": [
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_every_alias_and_canonical_name_work",
+          "test_get_command_and_list_commands"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1852,
+        "operator": "cmp",
+        "description": "IsNot \u2192 Is",
+        "killed": true,
+        "killed_by": [
+          "test_alias_cannot_be_reused",
+          "test_aliases_from_group_constructor",
+          "test_aliases_in_chain_mode",
+          "test_command_name_cannot_take_an_alias"
+        ]
+      }
+    ]
+  },
+  "touched_symbols": [
+    "src/click/core.py:Command.__init__",
+    "src/click/core.py:Group.__init__",
+    "src/click/core.py:Group._register_aliases",
+    "src/click/core.py:Group.add_command",
+    "src/click/core.py:Group.format_commands",
+    "src/click/core.py:Group.get_command",
+    "src/click/core.py:Group.resolve_command"
+  ],
+  "api_refs": [
+    "CliRunner",
+    "Command",
+    "Context",
+    "Group",
+    "echo",
+    "get_current_context",
+    "group",
+    "pass_context"
+  ],
+  "passed": true,
+  "seconds": 44.0,
+  "round": 0
+}

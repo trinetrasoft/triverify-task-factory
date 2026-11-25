@@ -1,0 +1,168 @@
+diff --git a/src/click/__init__.py b/src/click/__init__.py
+index a34ab02..2399bb3 100644
+--- a/src/click/__init__.py
++++ b/src/click/__init__.py
+@@ -54,6 +54,7 @@ from .termui import secho as secho
+ from .termui import style as style
+ from .termui import unstyle as unstyle
+ from .types import BOOL as BOOL
++from .types import ByteSize as ByteSize
+ from .types import Choice as Choice
+ from .types import DateTime as DateTime
+ from .types import File as File
+diff --git a/src/click/types.py b/src/click/types.py
+index b6e98a9..062d261 100644
+--- a/src/click/types.py
++++ b/src/click/types.py
+@@ -4,6 +4,7 @@ import abc
+ import collections.abc as cabc
+ import enum
+ import os
++import re
+ import stat
+ import sys
+ import typing as t
+@@ -907,6 +908,143 @@ class UUIDParameterType(ParamType[uuid.UUID]):
+         return "UUID"
+ 
+ 
++class ByteSizeInfoDict(ParamTypeInfoDict):
++    min: int | None
++    max: int | None
++
++
++class ByteSize(ParamType[int]):
++    """Convert a human-readable data size, such as ``"512"``, ``"10KB"`` or
++    ``"1.5 MiB"``, into an integer number of bytes.
++
++    A size is a non-negative number optionally followed by a unit. Units are
++    case-insensitive and may be separated from the number by whitespace:
++
++    -   no unit or ``B``: bytes.
++    -   ``K``/``KB``, ``M``/``MB``, ``G``/``GB``, ``T``/``TB``: powers of 1000.
++    -   ``Ki``/``KiB``, ``Mi``/``MiB``, ``Gi``/``GiB``, ``Ti``/``TiB``: powers of
++        1024.
++
++    The number may have a fractional part as long as the resulting size is a
++    whole number of bytes. Integers (but not booleans) are accepted as a size in
++    bytes.
++
++    :param min: The smallest accepted size in bytes, inclusive.
++    :param max: The largest accepted size in bytes, inclusive.
++
++    .. versionadded:: 8.6
++    """
++
++    name = "size"
++
++    _UNITS: t.ClassVar[dict[str, int]] = {
++        "": 1,
++        "b": 1,
++        "k": 1000,
++        "kb": 1000,
++        "m": 1000**2,
++        "mb": 1000**2,
++        "g": 1000**3,
++        "gb": 1000**3,
++        "t": 1000**4,
++        "tb": 1000**4,
++        "ki": 1024,
++        "kib": 1024,
++        "mi": 1024**2,
++        "mib": 1024**2,
++        "gi": 1024**3,
++        "gib": 1024**3,
++        "ti": 1024**4,
++        "tib": 1024**4,
++    }
++    _PATTERN: t.ClassVar[re.Pattern[str]] = re.compile(
++        r"\s*(?P<whole>\d*)(?:\.(?P<frac>\d*))?\s*(?P<unit>[A-Za-z]*)\s*"
++    )
++
++    def __init__(self, min: int | None = None, max: int | None = None) -> None:
++        self.min = min
++        self.max = max
++
++    def to_info_dict(self) -> ByteSizeInfoDict:
++        info_dict = t.cast(ByteSizeInfoDict, super().to_info_dict())
++        info_dict.update(min=self.min, max=self.max)
++        return info_dict
++
++    def get_metavar(self, param: Parameter, ctx: Context) -> str:
++        return "SIZE"
++
++    def convert(
++        self, value: t.Any, param: Parameter | None, ctx: Context | None
++    ) -> int:
++        if isinstance(value, int) and not isinstance(value, bool):
++            size = value
++        else:
++            size = self._parse(value, param, ctx)
++
++        if size < 0:
++            self.fail(
++                _("{value!r} is not a valid size.").format(value=value), param, ctx
++            )
++
++        if self.min is not None and size < self.min:
++            self.fail(
++                _("{value!r} is smaller than the minimum size of {min} bytes.").format(
++                    value=value, min=self.min
++                ),
++                param,
++                ctx,
++            )
++
++        if self.max is not None and size > self.max:
++            self.fail(
++                _("{value!r} is larger than the maximum size of {max} bytes.").format(
++                    value=value, max=self.max
++                ),
++                param,
++                ctx,
++            )
++
++        return size
++
++    def _parse(
++        self, value: t.Any, param: Parameter | None, ctx: Context | None
++    ) -> int:
++        match = self._PATTERN.fullmatch(value) if isinstance(value, str) else None
++
++        if match is None or not (match["whole"] or match["frac"]):
++            self.fail(
++                _("{value!r} is not a valid size.").format(value=value), param, ctx
++            )
++
++        multiplier = self._UNITS.get(match["unit"].lower())
++
++        if multiplier is None:
++            self.fail(
++                _("{value!r} has an unknown size unit {unit!r}.").format(
++                    value=value, unit=match["unit"]
++                ),
++                param,
++                ctx,
++            )
++
++        # Exact integer arithmetic: "1.5" is 15 / 10, so no float rounding.
++        frac = match["frac"] or ""
++        numerator = int((match["whole"] or "0") + frac) * multiplier
++        denominator = 10 ** len(frac)
++
++        if numerator % denominator:
++            self.fail(
++                _("{value!r} is not a whole number of bytes.").format(value=value),
++                param,
++                ctx,
++            )
++
++        return numerator // denominator
++
++    def __repr__(self) -> str:
++        return "ByteSize"
++
++
+ class FileInfoDict(ParamTypeInfoDict):
+     mode: str
+     encoding: str | None

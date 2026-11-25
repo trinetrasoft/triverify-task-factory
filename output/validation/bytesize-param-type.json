@@ -1,0 +1,180 @@
+{
+  "id": "bytesize-param-type",
+  "feature_module": "tests/test_tv_bytesize_param_type.py",
+  "gates": {
+    "patch_applies": true,
+    "no_leakage": true,
+    "novel_upstream": true,
+    "oracle_reward_1": true,
+    "test_count_6_14": true,
+    "nop_reward_0": true,
+    "mutation_score": true
+  },
+  "failures": [],
+  "upstream_hits": {},
+  "fail_to_pass": [
+    "tests.test_tv_bytesize_param_type::test_command_line_integration",
+    "tests.test_tv_bytesize_param_type::test_every_unit_multiplier",
+    "tests.test_tv_bytesize_param_type::test_fraction_must_give_whole_bytes",
+    "tests.test_tv_bytesize_param_type::test_fractional_sizes_are_exact",
+    "tests.test_tv_bytesize_param_type::test_help_metavar_is_size",
+    "tests.test_tv_bytesize_param_type::test_info_dict_and_repr",
+    "tests.test_tv_bytesize_param_type::test_integers_pass_through_and_booleans_do_not",
+    "tests.test_tv_bytesize_param_type::test_invalid_sizes",
+    "tests.test_tv_bytesize_param_type::test_min_and_max_are_inclusive",
+    "tests.test_tv_bytesize_param_type::test_plain_numbers_and_bytes_unit",
+    "tests.test_tv_bytesize_param_type::test_units_are_case_insensitive_and_whitespace_tolerant",
+    "tests.test_tv_bytesize_param_type::test_unknown_unit",
+    "tests.test_tv_bytesize_param_type::test_works_with_multiple_and_envvar"
+  ],
+  "oracle": [
+    {
+      "reward": 1.0,
+      "seconds": 7.25,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.29,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.52,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    }
+  ],
+  "nop": {
+    "reward": 0.0,
+    "seconds": 7.23,
+    "regressions": [],
+    "features_passing_at_base": []
+  },
+  "mutation": {
+    "control_passed": true,
+    "total": 8,
+    "killed": 8,
+    "score": 1.0,
+    "mutants": [
+      {
+        "path": "src/click/types.py",
+        "line": 940,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_command_line_integration",
+          "test_every_unit_multiplier",
+          "test_fraction_must_give_whole_bytes",
+          "test_fractional_sizes_are_exact"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 989,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_command_line_integration",
+          "test_every_unit_multiplier",
+          "test_fractional_sizes_are_exact",
+          "test_integers_pass_through_and_booleans_do_not"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 1035,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_command_line_integration",
+          "test_every_unit_multiplier",
+          "test_fraction_must_give_whole_bytes",
+          "test_fractional_sizes_are_exact"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 982,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_command_line_integration",
+          "test_every_unit_multiplier",
+          "test_fraction_must_give_whole_bytes",
+          "test_fractional_sizes_are_exact"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 1022,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_unknown_unit"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 947,
+        "operator": "int",
+        "description": "1000 \u2192 1001",
+        "killed": true,
+        "killed_by": [
+          "test_every_unit_multiplier"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 954,
+        "operator": "int",
+        "description": "2 \u2192 3",
+        "killed": true,
+        "killed_by": [
+          "test_every_unit_multiplier"
+        ]
+      },
+      {
+        "path": "src/click/types.py",
+        "line": 984,
+        "operator": "int",
+        "description": "0 \u2192 1",
+        "killed": true,
+        "killed_by": [
+          "test_every_unit_multiplier"
+        ]
+      }
+    ]
+  },
+  "touched_symbols": [
+    "src/click/__init__.py:<module>",
+    "src/click/types.py:ByteSize.__init__",
+    "src/click/types.py:ByteSize.__repr__",
+    "src/click/types.py:ByteSize._parse",
+    "src/click/types.py:ByteSize.convert",
+    "src/click/types.py:ByteSize.get_metavar",
+    "src/click/types.py:ByteSize.to_info_dict",
+    "src/click/types.py:ByteSizeInfoDict"
+  ],
+  "api_refs": [
+    "BadParameter",
+    "ByteSize",
+    "CliRunner",
+    "command",
+    "echo",
+    "option"
+  ],
+  "passed": true,
+  "seconds": 37.8,
+  "round": 0
+}

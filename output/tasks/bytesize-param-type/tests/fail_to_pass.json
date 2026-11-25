@@ -1,0 +1,15 @@
+[
+ "tests.test_tv_bytesize_param_type::test_command_line_integration",
+ "tests.test_tv_bytesize_param_type::test_every_unit_multiplier",
+ "tests.test_tv_bytesize_param_type::test_fraction_must_give_whole_bytes",
+ "tests.test_tv_bytesize_param_type::test_fractional_sizes_are_exact",
+ "tests.test_tv_bytesize_param_type::test_help_metavar_is_size",
+ "tests.test_tv_bytesize_param_type::test_info_dict_and_repr",
+ "tests.test_tv_bytesize_param_type::test_integers_pass_through_and_booleans_do_not",
+ "tests.test_tv_bytesize_param_type::test_invalid_sizes",
+ "tests.test_tv_bytesize_param_type::test_min_and_max_are_inclusive",
+ "tests.test_tv_bytesize_param_type::test_plain_numbers_and_bytes_unit",
+ "tests.test_tv_bytesize_param_type::test_units_are_case_insensitive_and_whitespace_tolerant",
+ "tests.test_tv_bytesize_param_type::test_unknown_unit",
+ "tests.test_tv_bytesize_param_type::test_works_with_multiple_and_envvar"
+]

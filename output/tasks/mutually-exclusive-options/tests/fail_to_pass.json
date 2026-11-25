@@ -1,0 +1,15 @@
+[
+ "tests.test_tv_mutually_exclusive_options::test_attribute_is_normalized",
+ "tests.test_tv_mutually_exclusive_options::test_check_is_skipped_during_resilient_parsing",
+ "tests.test_tv_mutually_exclusive_options::test_default_map_does_not_count",
+ "tests.test_tv_mutually_exclusive_options::test_defaults_do_not_count_as_provided",
+ "tests.test_tv_mutually_exclusive_options::test_environment_variable_counts_as_provided",
+ "tests.test_tv_mutually_exclusive_options::test_flag_off_switch_and_arguments_count",
+ "tests.test_tv_mutually_exclusive_options::test_group_needs_two_different_names",
+ "tests.test_tv_mutually_exclusive_options::test_group_parameters_are_checked_before_subcommand",
+ "tests.test_tv_mutually_exclusive_options::test_groups_are_independent",
+ "tests.test_tv_mutually_exclusive_options::test_single_parameter_is_allowed",
+ "tests.test_tv_mutually_exclusive_options::test_three_parameters_message",
+ "tests.test_tv_mutually_exclusive_options::test_two_parameters_conflict",
+ "tests.test_tv_mutually_exclusive_options::test_unknown_parameter_name_is_a_type_error"
+]

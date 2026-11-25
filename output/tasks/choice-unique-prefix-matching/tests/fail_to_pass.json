@@ -1,0 +1,14 @@
+[
+ "tests.test_tv_choice_unique_prefix_matching::test_ambiguous_prefix_lists_candidates_in_choice_order",
+ "tests.test_tv_choice_unique_prefix_matching::test_case_insensitive_prefix",
+ "tests.test_tv_choice_unique_prefix_matching::test_case_sensitive_prefix_respects_case",
+ "tests.test_tv_choice_unique_prefix_matching::test_command_line_errors",
+ "tests.test_tv_choice_unique_prefix_matching::test_empty_value_is_not_a_prefix",
+ "tests.test_tv_choice_unique_prefix_matching::test_enum_choices_use_member_names",
+ "tests.test_tv_choice_unique_prefix_matching::test_exact_match_wins_over_longer_choice",
+ "tests.test_tv_choice_unique_prefix_matching::test_info_dict_and_message_hook",
+ "tests.test_tv_choice_unique_prefix_matching::test_prefixes_are_rejected_when_disabled",
+ "tests.test_tv_choice_unique_prefix_matching::test_token_normalize_func_applies_to_prefixes",
+ "tests.test_tv_choice_unique_prefix_matching::test_unique_prefix_resolves_to_choice",
+ "tests.test_tv_choice_unique_prefix_matching::test_unknown_value_keeps_invalid_choice_message"
+]

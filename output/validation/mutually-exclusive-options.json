@@ -1,0 +1,282 @@
+{
+  "id": "mutually-exclusive-options",
+  "feature_module": "tests/test_tv_mutually_exclusive_options.py",
+  "gates": {
+    "patch_applies": true,
+    "no_leakage": true,
+    "novel_upstream": true,
+    "oracle_reward_1": true,
+    "test_count_6_14": true,
+    "nop_reward_0": true,
+    "mutation_score": true
+  },
+  "failures": [],
+  "upstream_hits": {},
+  "fail_to_pass": [
+    "tests.test_tv_mutually_exclusive_options::test_attribute_is_normalized",
+    "tests.test_tv_mutually_exclusive_options::test_check_is_skipped_during_resilient_parsing",
+    "tests.test_tv_mutually_exclusive_options::test_default_map_does_not_count",
+    "tests.test_tv_mutually_exclusive_options::test_defaults_do_not_count_as_provided",
+    "tests.test_tv_mutually_exclusive_options::test_environment_variable_counts_as_provided",
+    "tests.test_tv_mutually_exclusive_options::test_flag_off_switch_and_arguments_count",
+    "tests.test_tv_mutually_exclusive_options::test_group_needs_two_different_names",
+    "tests.test_tv_mutually_exclusive_options::test_group_parameters_are_checked_before_subcommand",
+    "tests.test_tv_mutually_exclusive_options::test_groups_are_independent",
+    "tests.test_tv_mutually_exclusive_options::test_single_parameter_is_allowed",
+    "tests.test_tv_mutually_exclusive_options::test_three_parameters_message",
+    "tests.test_tv_mutually_exclusive_options::test_two_parameters_conflict",
+    "tests.test_tv_mutually_exclusive_options::test_unknown_parameter_name_is_a_type_error"
+  ],
+  "oracle": [
+    {
+      "reward": 1.0,
+      "seconds": 7.35,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.22,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 6.93,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    }
+  ],
+  "nop": {
+    "reward": 0.0,
+    "seconds": 7.11,
+    "regressions": [],
+    "features_passing_at_base": []
+  },
+  "mutation": {
+    "control_passed": true,
+    "total": 16,
+    "killed": 15,
+    "score": 0.938,
+    "mutants": [
+      {
+        "path": "src/click/core.py",
+        "line": 1087,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_attribute_is_normalized",
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_default_map_does_not_count",
+          "test_defaults_do_not_count_as_provided"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1097,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_attribute_is_normalized",
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1434,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1439,
+        "operator": "reverse-iter",
+        "description": "iterate in reverse order",
+        "killed": false,
+        "killed_by": []
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1406,
+        "operator": "not",
+        "description": "drop `not`",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1434,
+        "operator": "not",
+        "description": "drop `not`",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1442,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_default_map_does_not_count",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1450,
+        "operator": "reverse-iter",
+        "description": "iterate in reverse order",
+        "killed": true,
+        "killed_by": [
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count",
+          "test_group_parameters_are_checked_before_subcommand",
+          "test_groups_are_independent"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1091,
+        "operator": "raise-pass",
+        "description": "raise \u2192 pass",
+        "killed": true,
+        "killed_by": [
+          "test_group_needs_two_different_names"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1451,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1456,
+        "operator": "cmp",
+        "description": "Gt \u2192 GtE",
+        "killed": true,
+        "killed_by": [
+          "test_default_map_does_not_count",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1458,
+        "operator": "raise-pass",
+        "description": "raise \u2192 pass",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1453,
+        "operator": "boolop",
+        "description": "And \u2192 Or",
+        "killed": true,
+        "killed_by": [
+          "test_default_map_does_not_count",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1456,
+        "operator": "int",
+        "description": "1 \u2192 2",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided",
+          "test_flag_off_switch_and_arguments_count"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1440,
+        "operator": "cmp",
+        "description": "NotIn \u2192 In",
+        "killed": true,
+        "killed_by": [
+          "test_check_is_skipped_during_resilient_parsing",
+          "test_default_map_does_not_count",
+          "test_defaults_do_not_count_as_provided",
+          "test_environment_variable_counts_as_provided"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1453,
+        "operator": "cmp",
+        "description": "Lt \u2192 LtE",
+        "killed": true,
+        "killed_by": [
+          "test_default_map_does_not_count"
+        ]
+      }
+    ]
+  },
+  "touched_symbols": [
+    "src/click/core.py:Command.__init__",
+    "src/click/core.py:Command.check_mutually_exclusive",
+    "src/click/core.py:Command.parse_args"
+  ],
+  "api_refs": [
+    "CliRunner",
+    "Command",
+    "UsageError",
+    "argument",
+    "command",
+    "echo",
+    "group",
+    "option"
+  ],
+  "passed": true,
+  "seconds": 39.8,
+  "round": 0
+}

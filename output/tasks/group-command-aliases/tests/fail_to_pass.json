@@ -1,0 +1,15 @@
+[
+ "tests.test_tv_group_command_aliases::test_alias_cannot_be_reused",
+ "tests.test_tv_group_command_aliases::test_alias_cannot_shadow_existing_command",
+ "tests.test_tv_group_command_aliases::test_aliases_from_group_constructor",
+ "tests.test_tv_group_command_aliases::test_aliases_in_chain_mode",
+ "tests.test_tv_group_command_aliases::test_command_name_cannot_take_an_alias",
+ "tests.test_tv_group_command_aliases::test_command_stores_aliases",
+ "tests.test_tv_group_command_aliases::test_every_alias_and_canonical_name_work",
+ "tests.test_tv_group_command_aliases::test_get_command_and_list_commands",
+ "tests.test_tv_group_command_aliases::test_help_lists_aliases_next_to_names",
+ "tests.test_tv_group_command_aliases::test_invoke_through_alias",
+ "tests.test_tv_group_command_aliases::test_invoked_subcommand_is_canonical_name",
+ "tests.test_tv_group_command_aliases::test_replacing_a_command_drops_its_old_aliases",
+ "tests.test_tv_group_command_aliases::test_unknown_command_error_is_unchanged"
+]

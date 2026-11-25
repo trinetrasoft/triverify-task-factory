@@ -1,0 +1,192 @@
+{
+  "id": "option-help-sections",
+  "feature_module": "tests/test_tv_option_help_sections.py",
+  "gates": {
+    "patch_applies": true,
+    "no_leakage": true,
+    "novel_upstream": true,
+    "oracle_reward_1": true,
+    "test_count_6_14": true,
+    "nop_reward_0": true,
+    "mutation_score": true
+  },
+  "failures": [],
+  "upstream_hits": {},
+  "fail_to_pass": [
+    "tests.test_tv_option_help_sections::test_arguments_section_is_unaffected",
+    "tests.test_tv_option_help_sections::test_group_sections_come_before_commands",
+    "tests.test_tv_option_help_sections::test_help_without_sections_is_unchanged",
+    "tests.test_tv_option_help_sections::test_hidden_options_never_create_a_section",
+    "tests.test_tv_option_help_sections::test_no_options_heading_when_every_option_has_a_section",
+    "tests.test_tv_option_help_sections::test_option_stores_help_section",
+    "tests.test_tv_option_help_sections::test_options_are_grouped_under_their_sections",
+    "tests.test_tv_option_help_sections::test_order_is_by_first_appearance_not_alphabetical",
+    "tests.test_tv_option_help_sections::test_records_keep_their_usual_rendering",
+    "tests.test_tv_option_help_sections::test_sections_follow_options_in_first_appearance_order",
+    "tests.test_tv_option_help_sections::test_unsectioned_options_and_help_stay_under_options"
+  ],
+  "oracle": [
+    {
+      "reward": 1.0,
+      "seconds": 7.13,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.42,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    },
+    {
+      "reward": 1.0,
+      "seconds": 7.28,
+      "regressions": [],
+      "features_failed": [],
+      "log_tail": ""
+    }
+  ],
+  "nop": {
+    "reward": 0.0,
+    "seconds": 7.73,
+    "regressions": [],
+    "features_passing_at_base": []
+  },
+  "mutation": {
+    "control_passed": true,
+    "total": 9,
+    "killed": 9,
+    "score": 1.0,
+    "mutants": [
+      {
+        "path": "src/click/core.py",
+        "line": 1306,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_help_without_sections_is_unchanged",
+          "test_hidden_options_never_create_a_section"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1315,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_help_without_sections_is_unchanged",
+          "test_no_options_heading_when_every_option_has_a_section"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1317,
+        "operator": "negate-if",
+        "description": "negate `if` condition",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_help_without_sections_is_unchanged",
+          "test_no_options_heading_when_every_option_has_a_section"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1321,
+        "operator": "reverse-iter",
+        "description": "iterate in reverse order",
+        "killed": true,
+        "killed_by": [
+          "test_order_is_by_first_appearance_not_alphabetical",
+          "test_sections_follow_options_in_first_appearance_order"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 3081,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_no_options_heading_when_every_option_has_a_section",
+          "test_option_stores_help_section"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1312,
+        "operator": "assign-none",
+        "description": "assign None",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_no_options_heading_when_every_option_has_a_section",
+          "test_options_are_grouped_under_their_sections"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1313,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_arguments_section_is_unaffected",
+          "test_group_sections_come_before_commands",
+          "test_help_without_sections_is_unchanged",
+          "test_no_options_heading_when_every_option_has_a_section"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1319,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_help_without_sections_is_unchanged",
+          "test_unsectioned_options_and_help_stay_under_options"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "line": 1323,
+        "operator": "stmt-delete",
+        "description": "delete call statement",
+        "killed": true,
+        "killed_by": [
+          "test_help_without_sections_is_unchanged",
+          "test_unsectioned_options_and_help_stay_under_options"
+        ]
+      }
+    ]
+  },
+  "touched_symbols": [
+    "src/click/core.py:Command.format_options",
+    "src/click/core.py:Option.__init__"
+  ],
+  "api_refs": [
+    "CliRunner",
+    "Context",
+    "Option",
+    "argument",
+    "command",
+    "group",
+    "option"
+  ],
+  "passed": true,
+  "seconds": 34.5,
+  "round": 0
+}
