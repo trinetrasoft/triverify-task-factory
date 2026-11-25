@@ -46,17 +46,12 @@ jobs:
           harbor --version || true
           docker version --format '{{.Server.Version}}'
 
-      - name: Isolated interpreter for the target's tests
-        run: |
-          python -m venv /tmp/target
-          /tmp/target/bin/pip install -q pytest==8.4.1
-          echo "TRIVERIFY_TARGET_PYTHON=/tmp/target/bin/python" >> "$GITHUB_ENV"
-
-      - name: Run the factory end to end (replay provider)
+      - name: Run the factory end to end (replay provider, gates inside the task image)
         id: run
         run: |
           set +e
-          python -m triverify run --config configs/click.toml --provider replay 2>&1 | tee output-run.log
+          python -m triverify run --config configs/click.toml --provider replay \
+            --runner docker --rebaseline 2>&1 | tee output-run.log
           echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
 
       - name: Job summary

@@ -46,13 +46,50 @@ def is_feature(test_id: str, prefix: str) -> bool:
     return cls == prefix or cls.startswith(prefix + ".")
 
 
+def docker_image(cfg: Config) -> str | None:
+    """Image used for environment parity (``TRIVERIFY_DOCKER_IMAGE``), if any."""
+    return os.environ.get("TRIVERIFY_DOCKER_IMAGE") or None
+
+
+def build_image(cfg: Config) -> str:
+    """Build the exact task environment image once and use it for every gate.
+
+    Running the baseline, NOP, ORACLE and mutant gates inside the same image the
+    Harbor verifier uses means pass-to-pass lists cannot drift between the factory
+    and Harbor (for example tests that need a tool missing from the image).
+    """
+    from .packager import dockerfile
+
+    tag = f"triverify/{cfg.target.name}-env:{cfg.target.base_commit[:12]}"
+    subprocess.run(
+        ["docker", "build", "-q", "-t", tag, "-"],
+        input=dockerfile(cfg), text=True, check=True, capture_output=True,
+    )
+    return tag
+
+
 def _run(cfg: Config, repo: Path, targets: list[str]) -> tuple[dict[str, str], float, str]:
+    image = docker_image(cfg)
     with tempfile.TemporaryDirectory() as tmp:
         junit = Path(tmp) / "junit.xml"
         start = time.monotonic()
-        proc = grading.run_pytest(
-            repo, targets, junit, env=cfg.target.env, python=target_python(cfg)
-        )
+        if image:
+            os.chmod(tmp, 0o777)
+            env_flags = [x for k, v in cfg.target.env.items() for x in ("-e", f"{k}={v}")]
+            cmd = [
+                "docker", "run", "--rm", "--network", "none",
+                "--user", f"{os.getuid()}:{os.getgid()}",
+                "-e", "PYTHONDONTWRITEBYTECODE=1", "-e", "HOME=/tmp", *env_flags,
+                "-v", f"{repo}:/app", "-v", f"{tmp}:/out", "-w", "/app", image,
+                "python", "-m", "pytest", "-p", "no:cacheprovider", "-q", "-rN",
+                "--continue-on-collection-errors", "--junitxml=/out/junit.xml",
+                "-o", "junit_family=xunit1", *targets,
+            ]
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+        else:
+            proc = grading.run_pytest(
+                repo, targets, junit, env=cfg.target.env, python=target_python(cfg)
+            )
         elapsed = time.monotonic() - start
         return grading.junit_outcomes(junit), elapsed, (proc.stdout + proc.stderr)[-4000:]
 
@@ -74,6 +111,8 @@ def baseline(cfg: Config, base: Path, runs: int = 2) -> dict:
         "collected": total,
         "runs": runs,
         "durations_sec": durations,
+        "runner": "docker" if docker_image(cfg) else "local",
+        "image": docker_image(cfg),
     }
 
 

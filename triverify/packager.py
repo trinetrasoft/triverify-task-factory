@@ -26,6 +26,12 @@ from .config import Config
 from .validate import feature_module
 
 GENERATOR = "triverify 0.1.0"
+AGENT_PATCH = "/tmp/triverify/agent.patch"
+# Snapshot everything the agent changed in /app except the test suite.
+COLLECT_CMD = (
+    "mkdir -p /tmp/triverify && cd /app && git add -A && "
+    "git diff --cached --binary -- . ':(exclude)tests' > " + AGENT_PATCH
+)
 
 
 def _toml_str(value: str) -> str:
@@ -42,6 +48,9 @@ def task_toml(cfg: Config, spec: dict, report: dict) -> str:
     gates = report.get("gates", {})
     mutation = report.get("mutation", {})
     return f"""schema_version = "1.4"
+# The verifier runs in a fresh copy of the environment and only receives the
+# agent's changes as a patch that excludes tests/ (tamper-proof regression suite).
+artifacts = [{_toml_str(AGENT_PATCH)}]
 
 [task]
 name = {_toml_str(name)}
@@ -70,6 +79,11 @@ triverify_gates_passed = {str(all(gates.values()) if gates else False).lower()}
 
 [verifier]
 timeout_sec = 1200.0
+environment_mode = "separate"
+
+[[verifier.collect]]
+command = {_toml_str(COLLECT_CMD)}
+timeout_sec = 120.0
 
 [agent]
 timeout_sec = 3600.0
@@ -103,7 +117,9 @@ RUN git init -q . \\
     && git config --global user.email "agent@example.com" \\
     && git config --global user.name "agent"
 
-RUN {t.install}
+RUN {t.install} \\
+    && git ls-files --others --exclude-standard >> .git/info/exclude \\
+    && test -z "$(git status --porcelain)"
 """
 
 
@@ -116,10 +132,20 @@ echo "reference solution applied"
 """
 
 TEST_SH = """#!/bin/bash
-# TriVerify verifier: add the feature tests to the repository's test suite, run the
-# whole suite once, and score it with the shared reward formula (grade.py).
+# TriVerify verifier (separate container, clean checkout of the base commit):
+# apply the agent's changes (collected without tests/), add the feature tests,
+# run the whole suite once and score it with the shared reward formula.
 cd /app
 mkdir -p /logs/verifier
+if [ -s {agent_patch} ]; then
+  if git apply --whitespace=nowarn {agent_patch}; then
+    echo "agent patch applied ($(wc -l < {agent_patch}) lines)" > /logs/verifier/agent-patch.txt
+  else
+    echo "agent patch did not apply" > /logs/verifier/agent-patch.txt
+  fi
+else
+  echo "no agent changes" > /logs/verifier/agent-patch.txt
+fi
 cp /tests/feature/*.py /app/{tests_dir}/
 python /tests/grade.py --repo /app --tests-dir /tests --out /logs/verifier --target {tests_dir}
 # grade.py always writes /logs/verifier/reward.txt; never fail the script itself.
@@ -147,7 +173,7 @@ def write(cfg: Config, spec: dict, report: dict, p2p: list[str], out_dir: Path) 
     module = feature_module(cfg, spec["id"])
     (task_dir / "tests" / "feature" / f"{module}.py").write_text(spec["feature_tests"])
     test_sh = task_dir / "tests" / "test.sh"
-    test_sh.write_text(TEST_SH.format(tests_dir=cfg.target.tests_dir))
+    test_sh.write_text(TEST_SH.format(tests_dir=cfg.target.tests_dir, agent_patch=AGENT_PATCH))
     test_sh.chmod(0o755)
     grade_src = resources.files("triverify").joinpath("grading.py").read_text()
     (task_dir / "tests" / "grade.py").write_text(grade_src)

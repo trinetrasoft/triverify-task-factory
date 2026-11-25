@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -80,6 +81,10 @@ def _load_specs(cfg, only=None) -> list[dict]:
 def cmd_validate(cfg, args) -> int:
     p = _paths(cfg)
     base = ensure_base(cfg)
+    if args.runner == "docker" and not validate.docker_image(cfg):
+        tag = validate.build_image(cfg)
+        os.environ["TRIVERIFY_DOCKER_IMAGE"] = tag
+        print(f"[env] gates run inside the task image {tag} (network disabled)")
     if p["baseline"].exists() and not args.rebaseline:
         bl = json.loads(p["baseline"].read_text())
     else:
@@ -207,6 +212,7 @@ def main(argv: list[str] | None = None) -> int:
         sp.add_argument("--force", action="store_true")
         sp.add_argument("--rebaseline", action="store_true")
         sp.add_argument("--skip-harbor", action="store_true")
+        sp.add_argument("--runner", choices=["local", "docker"], default=os.environ.get("TRIVERIFY_RUNNER", "local"))
     ans = sub.add_parser("answer")
     ans.add_argument("key")
     ans.add_argument("file")
