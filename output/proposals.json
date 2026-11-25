@@ -1,0 +1,95 @@
+{
+  "provenance": {
+    "stage": "propose",
+    "key": "442c0b59472026b99f745e0a"
+  },
+  "proposals": [
+    {
+      "id": "bytesize-param-type",
+      "axis": "new parameter type",
+      "title": "Add a click.ByteSize parameter type for human-readable data sizes",
+      "summary": "Introduce a ByteSize parameter type that converts values such as '512', '10KB', '1.5 MiB' or '2g' into an integer number of bytes. Decimal units (K/KB, M/MB, G/GB, T/TB) use powers of 1000 and binary units (Ki/KiB, Mi/MiB, Gi/GiB, Ti/TiB) use powers of 1024, case-insensitively. Optional min/max bounds reject out-of-range sizes with a clear usage error, and the help metavar is SIZE.",
+      "public_api": [
+        "ByteSize"
+      ],
+      "touches": [
+        "src/click/types.py",
+        "src/click/__init__.py"
+      ],
+      "anchors": [
+        "ParamType",
+        "IntParamType",
+        "_NumberRangeBase",
+        "UUIDParameterType"
+      ],
+      "why_realistic": "CLIs constantly take cache sizes, upload limits and memory budgets; every project re-implements this parsing inconsistently, and a built-in type gives uniform errors and help."
+    },
+    {
+      "id": "choice-unique-prefix-matching",
+      "axis": "behaviour change to an existing type",
+      "title": "Let click.Choice accept unambiguous prefixes of its choices",
+      "summary": "Add an opt-in allow_prefix argument to Choice. When enabled, a value that is not an exact choice but is the prefix of exactly one choice resolves to that choice (honouring case_sensitive and token normalisation). An exact match always wins over prefix matching, an ambiguous prefix fails with a message that lists the candidate choices, and default behaviour is unchanged when the flag is off.",
+      "public_api": [
+        "allow_prefix"
+      ],
+      "touches": [
+        "src/click/types.py"
+      ],
+      "anchors": [
+        "Choice"
+      ],
+      "why_realistic": "Tools like git and many package managers accept abbreviations such as `--format js`; users expect it and it is a long-standing feature request for Choice."
+    },
+    {
+      "id": "group-command-aliases",
+      "axis": "command dispatch and resolution",
+      "title": "Support aliases for subcommands registered on a click.Group",
+      "summary": "Commands gain an aliases argument (for example `@cli.command(aliases=['ls'])`). A group resolves an alias to its command, reports the canonical name as the invoked subcommand, lists aliases next to the command name in the Commands section of the help page, and refuses to register an alias that collides with an existing command name or alias.",
+      "public_api": [
+        "aliases"
+      ],
+      "touches": [
+        "src/click/core.py"
+      ],
+      "anchors": [
+        "Command",
+        "Group"
+      ],
+      "why_realistic": "Short aliases (`ls` for `list`, `rm` for `remove`) are among the most requested CLI conveniences; today users must subclass Group to get them."
+    },
+    {
+      "id": "mutually-exclusive-options",
+      "axis": "cross-parameter validation",
+      "title": "Declare mutually exclusive parameters on a command",
+      "summary": "Commands accept mutually_exclusive, a sequence of groups of parameter names. After parsing, if two or more parameters of one group were explicitly provided by the user (command line, environment variable or prompt), the command fails with a usage error naming the conflicting options; defaults never count as provided. Invalid group declarations are rejected early.",
+      "public_api": [
+        "mutually_exclusive"
+      ],
+      "touches": [
+        "src/click/core.py"
+      ],
+      "anchors": [
+        "Command",
+        "ParameterSource"
+      ],
+      "why_realistic": "Output-format flags (--json/--yaml/--csv) and input-source options routinely conflict; validating this by hand in every callback is repetitive and error-prone."
+    },
+    {
+      "id": "option-help-sections",
+      "axis": "help output rendering",
+      "title": "Group options under custom headings on the help page",
+      "summary": "Options gain a help_section argument. On the help page, options without a section stay under the usual 'Options' heading and options that share a section name are rendered together under that heading, with sections ordered by first appearance. Hidden options stay hidden, empty sections are not printed, and help pages of commands that do not use sections are byte-for-byte unchanged.",
+      "public_api": [
+        "help_section"
+      ],
+      "touches": [
+        "src/click/core.py"
+      ],
+      "anchors": [
+        "Option",
+        "Command"
+      ],
+      "why_realistic": "Large CLIs (docker, kubectl-style tools) organise dozens of options into 'Network', 'Output', 'Authentication' blocks; click users currently need third-party plugins for this."
+    }
+  ]
+}

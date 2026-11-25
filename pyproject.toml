@@ -1,0 +1,26 @@
+[project]
+name = "triverify"
+version = "0.1.0"
+description = "TriVerify Task Factory: automated, triple-verified Harbor task generation for evaluating AI coding systems"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Trinetra Soft", email = "info@trinetrasoft.com" }]
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+harbor = ["harbor==0.25.*"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+triverify = "triverify.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["triverify*"]
+
+[tool.setuptools.package-data]
+"triverify.prompts" = ["*.md"]

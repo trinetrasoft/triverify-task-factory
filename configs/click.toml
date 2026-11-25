@@ -1,0 +1,46 @@
+# TriVerify configuration for pallets/click (Innodata AI Hackathon, Track 1).
+
+[target]
+name = "click"
+url = "https://github.com/pallets/click"
+ref = "8.5.1"                                            # latest stable release tag
+base_commit = "cf19179e8e2fd54c601378cec9e0d21bb12b6fb1"  # full 40-char hash of 8.5.1
+language = "python"
+license = "BSD-3-Clause"
+source_dirs = ["src/click"]
+tests_dir = "tests"
+docker_base = "python:3.12-slim"
+install = "pip install -e . pytest==8.4.1"
+feature_test_prefix = "test_tv_"
+
+[target.env]
+PYTHONPATH = "src"   # local runner imports the worktree's click, never an installed one
+
+[factory]
+num_tasks = 5
+org = "trinetrasoft"
+axes = [
+  "new parameter type",
+  "behaviour change to an existing type",
+  "command dispatch and resolution",
+  "cross-parameter validation",
+  "help output rendering",
+  "testing utilities",
+  "context and environment configuration",
+]
+max_repair_rounds = 2
+max_symbol_jaccard = 0.34
+max_text_similarity = 0.55
+mutants_per_task = 16
+min_mutation_score = 0.7
+oracle_repeats = 3
+
+[generation]
+provider = "replay"            # replay | handoff | anthropic | openai
+model = "claude-opus-5-5"
+cache_dir = "cache/llm"
+pending_dir = "cache/pending"
+
+[paths]
+workdir = ".triverify"
+output = "output"

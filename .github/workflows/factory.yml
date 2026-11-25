@@ -1,0 +1,90 @@
+name: TriVerify factory
+
+# Every push re-runs the whole factory from the replay cache (no API keys):
+# pipeline unit tests → generate → triple verification (nop / oracle ×3 / mutants)
+# → Harbor packages → official `harbor run` nop/oracle matrix in Docker → report.
+# Outputs are committed back to the repository so they can be inspected.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["output/**", "docs/media/**", "**.md"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: factory
+  cancel-in-progress: false
+
+jobs:
+  pipeline-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest
+      - run: python -m pytest -q tests_pipeline
+
+  factory:
+    needs: pipeline-unit-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Harbor 0.25.x and the factory
+        run: |
+          pip install "harbor==0.25.*"
+          pip install -e .
+          harbor --version || true
+          docker version --format '{{.Server.Version}}'
+
+      - name: Isolated interpreter for the target's tests
+        run: |
+          python -m venv /tmp/target
+          /tmp/target/bin/pip install -q pytest==8.4.1
+          echo "TRIVERIFY_TARGET_PYTHON=/tmp/target/bin/python" >> "$GITHUB_ENV"
+
+      - name: Run the factory end to end (replay provider)
+        id: run
+        run: |
+          set +e
+          python -m triverify run --config configs/click.toml --provider replay 2>&1 | tee output-run.log
+          echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        run: |
+          [ -f output/REPORT.md ] && cat output/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Commit outputs back
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p output/logs && cp output-run.log output/logs/factory-run.log
+          git config user.name "triverify-ci"
+          git config user.email "ci@trinetrasoft.com"
+          git add output cache
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: factory outputs for ${GITHUB_SHA::7} [skip ci]"
+            git pull --rebase -q origin main || true
+            git push
+          fi
+
+      - name: Upload Harbor job directories
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harbor-jobs
+          path: .triverify/harbor-jobs
+          retention-days: 30
+
+      - name: Fail if any gate failed
+        if: steps.run.outputs.rc != '0'
+        run: exit 1
